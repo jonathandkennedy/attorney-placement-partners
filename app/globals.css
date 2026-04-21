@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --app-bg: #071223;
+  --app-gold: #C6A56A;
+  --app-white: #F8F8F8;
+  --app-muted: #A0A7B2;
+}
+
+html, body {
+  background-color: var(--app-bg);
+  color: var(--app-white);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer components {
+  .app-section {
+    @apply relative py-24 px-6 overflow-hidden;
+    background-color: var(--app-bg);
+  }
+  .app-container { @apply max-w-7xl mx-auto; }
+  .app-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.3em];
+    color: var(--app-gold);
+  }
+  .app-heading {
+    @apply font-serif font-bold leading-tight tracking-tight;
+    color: var(--app-white);
+  }
+  .app-card {
+    @apply rounded-2xl p-6 border transition-all duration-300;
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+  }
+  .app-card:hover {
+    @apply shadow-appCardHover -translate-y-1;
+    border-color: rgba(198,165,106,0.3);
+  }
+  .app-btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 font-semibold text-sm transition-all duration-300 rounded-xl px-7 py-4;
+    background: linear-gradient(135deg, #C6A56A 0%, #D4B97F 50%, #A8893A 100%);
+    color: #071223;
+  }
+  .app-btn-primary:hover {
+    @apply shadow-goldGlow -translate-y-0.5;
+    filter: brightness(1.08);
+  }
+  .app-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2.5 font-semibold text-sm transition-all duration-300 rounded-xl px-7 py-4 border;
+    background: transparent;
+    border-color: rgba(198,165,106,0.4);
+    color: var(--app-gold);
+  }
+  .app-btn-secondary:hover {
+    border-color: var(--app-gold);
+    background: rgba(198,165,106,0.08);
+  }
+  .gold-text {
+    background: linear-gradient(135deg, #C6A56A 0%, #D4B97F 50%, #A8893A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gold-divider {
+    @apply h-px w-16;
+    background: linear-gradient(90deg, transparent, #C6A56A, transparent);
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid #C6A56A;
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #071223; }
+::-webkit-scrollbar-thumb {
+  background: rgba(198,165,106,0.3);
+  border-radius: 10px;
+}
