@@ -12,9 +12,37 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.attorneyacquisition.com'),
   title: 'Attorney Placement Partners | Legal Recruiting Built By Lawyers',
   description:
     'Attorney Placement Partners helps law firms hire elite attorneys faster. Owned by former lawyers. Exclusive legal recruiting for associates, litigators, and partners.',
+  keywords: [
+    'attorney placement', 'legal recruiting', 'law firm hiring', 'attorney search',
+    'legal staffing', 'associate placement', 'partner placement', 'legal headhunter',
+  ],
+  alternates: {
+    canonical: 'https://www.attorneyacquisition.com',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.attorneyacquisition.com',
+    title: 'Attorney Placement Partners | Legal Recruiting Built By Lawyers',
+    description:
+      'Attorney Placement Partners helps law firms hire elite attorneys faster. Owned by former lawyers. Exclusive legal recruiting for associates, litigators, and partners.',
+    siteName: 'Attorney Placement Partners',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Attorney Placement Partners' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Attorney Placement Partners | Legal Recruiting Built By Lawyers',
+    description:
+      'Attorney Placement Partners helps law firms hire elite attorneys faster. Owned by former lawyers.',
+    images: ['/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
