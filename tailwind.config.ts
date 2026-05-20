@@ -5,10 +5,14 @@ const config: Config = {
     extend: {
       colors: {
         app: {
-          bg: '#071223',
-          gold: '#C6A56A',
-          white: '#F8F8F8',
-          muted: '#A0A7B2',
+          bg: '#F7F5F0',
+          gold: '#9A7420',
+          'gold-light': '#C6A56A',
+          navy: '#0D1B2A',
+          text: '#374151',
+          muted: '#6B7480',
+          border: '#E5DDD0',
+          white: '#FFFFFF',
         },
       },
       fontFamily: {
@@ -16,8 +20,8 @@ const config: Config = {
         serif: ['var(--font-playfair)', 'Georgia', 'serif'],
       },
       boxShadow: {
-        goldGlow: '0 0 40px rgba(198,165,106,0.5)',
-        appCardHover: '0 8px 40px rgba(0,0,0,0.5), 0 0 24px rgba(198,165,106,0.15)',
+        goldGlow: '0 6px 24px rgba(198,165,106,0.5)',
+        appCardHover: '0 12px 40px rgba(13,27,42,0.12), 0 0 0 1px rgba(154,116,32,0.25)',
       },
     },
   },

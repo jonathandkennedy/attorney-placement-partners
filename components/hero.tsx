@@ -24,17 +24,12 @@ const cardV: Variants = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#071223]">
+    <section className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: '#F7F5F0' }}>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full opacity-[0.12]"
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full opacity-[0.07]"
           style={{ background: 'radial-gradient(ellipse, #C6A56A 0%, transparent 70%)' }} />
-        <div className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(198,165,106,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(198,165,106,0.5) 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
-          }} />
-        <div className="absolute bottom-0 left-0 right-0 h-40"
-          style={{ background: 'linear-gradient(to top, #071223, transparent)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-32"
+          style={{ background: 'linear-gradient(to top, #F7F5F0, transparent)' }} />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20 w-full">
@@ -44,16 +39,16 @@ export default function Hero() {
               <span className="app-eyebrow">Legal Recruiting — Built Different</span>
             </motion.div>
 
-            <motion.h1 variants={item} className="font-serif font-bold text-[#F8F8F8] leading-[1.08] tracking-tight mb-6"
-              style={{ fontSize: 'clamp(2.6rem, 5vw, 4.2rem)' }}>
+            <motion.h1 variants={item} className="font-serif font-bold leading-[1.06] tracking-tight mb-6"
+              style={{ fontSize: 'clamp(3.2rem, 5.5vw, 5.2rem)', color: '#0D1B2A' }}>
               Built By Lawyers.{' '}
               <br className="hidden sm:block" />
               Built To Help Law Firms{' '}
               <span className="gold-text">Hire Better</span> Lawyers.
             </motion.h1>
 
-            <motion.p variants={item} className="text-[#A0A7B2] leading-relaxed mb-10 max-w-xl"
-              style={{ fontSize: 'clamp(1rem, 1.5vw, 1.125rem)' }}>
+            <motion.p variants={item} className="leading-relaxed mb-10 max-w-xl"
+              style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.25rem)', color: '#374151' }}>
               Attorney Placement Partners helps law firms hire elite attorneys faster—with less risk, fewer wasted interviews, and stronger long-term hires.
             </motion.p>
 
@@ -70,17 +65,17 @@ export default function Hero() {
             <motion.div variants={item} className="mt-12 flex items-center gap-6">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-9 h-9 rounded-full border-2 border-[#071223] flex items-center justify-center text-[10px] font-bold"
+                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[#F7F5F0] flex items-center justify-center text-[10px] font-bold"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(198,165,106,' + (0.2 + i * 0.1) + '), rgba(198,165,106,' + (0.4 + i * 0.1) + '))',
-                      color: '#C6A56A',
+                      background: 'linear-gradient(135deg, #E5DDD0, #D4C4A8)',
+                      color: '#9A7420',
                     }}>
                     {['JD', 'LT', 'MP', 'SA'][i - 1]}
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-[#A0A7B2]">
-                Trusted by managing partners <span className="text-[#F8F8F8] font-medium">nationwide</span>
+              <p className="text-base" style={{ color: '#374151' }}>
+                Trusted by managing partners <span className="font-semibold" style={{ color: '#0D1B2A' }}>nationwide</span>
               </p>
             </motion.div>
           </motion.div>
@@ -92,13 +87,13 @@ export default function Hero() {
                 <motion.div key={card.label} custom={i} variants={cardV} initial="hidden" animate="show"
                   whileHover={{ x: 6, transition: { duration: 0.2 } }}
                   className="app-card flex items-start gap-4 cursor-default">
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ background: 'rgba(198,165,106,0.1)', border: '1px solid rgba(198,165,106,0.2)' }}>
-                    <Icon className="w-5 h-5" style={{ color: '#C6A56A' }} strokeWidth={1.5} />
+                  <div className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ background: 'rgba(154,116,32,0.08)', border: '1px solid rgba(154,116,32,0.2)' }}>
+                    <Icon className="w-5 h-5" style={{ color: '#9A7420' }} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="text-[#F8F8F8] font-semibold text-sm leading-snug">{card.label}</p>
-                    <p className="text-[#A0A7B2] text-xs mt-0.5 leading-snug">{card.desc}</p>
+                    <p className="font-semibold text-base leading-snug" style={{ color: '#0D1B2A' }}>{card.label}</p>
+                    <p className="text-sm mt-1 leading-snug" style={{ color: '#6B7480' }}>{card.desc}</p>
                   </div>
                 </motion.div>
               );

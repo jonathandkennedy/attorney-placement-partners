@@ -12,7 +12,7 @@ import Footer from '@/components/footer';
 
 export default function HomePage() {
   return (
-    <main className="bg-[#071223] min-h-screen">
+    <main className="min-h-screen" style={{ backgroundColor: '#F7F5F0' }}>
       <Navbar />
       <Hero />
       <TrustBar />

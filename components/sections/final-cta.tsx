@@ -129,7 +129,7 @@ export default function FinalCta() {
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button type="submit" disabled={status === 'loading'}
-                    className="app-btn-primary rounded-xl group w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none">
+                    className="app-btn-primary rounded-xl group w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0 disabled:shadow-none">
                     {status === 'loading'
                       ? <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</>
                       : <>Start Confidential Search <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" /></>

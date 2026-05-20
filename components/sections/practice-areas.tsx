@@ -20,17 +20,14 @@ const areas = [
 
 export default function PracticeAreas() {
   return (
-    <section className="app-section" id="practice-areas">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] rounded-full opacity-[0.06] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse, #C6A56A, transparent 70%)' }} />
-
+    <section className="app-section" id="practice-areas" style={{ backgroundColor: '#F7F5F0' }}>
       <div className="app-container relative">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
           <p className="app-eyebrow mb-4">Our Specialization</p>
-          <h2 className="app-heading text-4xl md:text-5xl max-w-xl mx-auto">
+          <h2 className="app-heading max-w-xl mx-auto" style={{ fontSize: 'clamp(2.4rem, 4vw, 3.6rem)' }}>
             We Recruit By <span className="gold-text">Niche.</span> Not Guesswork.
           </h2>
-          <p className="text-[#A0A7B2] mt-4 max-w-lg mx-auto text-base leading-relaxed">
+          <p className="mt-5 max-w-lg mx-auto text-lg leading-relaxed" style={{ color: '#374151' }}>
             Each practice area demands different skills, personalities, and trajectories. We know every niche intimately.
           </p>
         </motion.div>
@@ -45,15 +42,15 @@ export default function PracticeAreas() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group relative rounded-xl p-5 border cursor-default transition-all duration-300"
-                style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.07)' }}>
-                <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{ boxShadow: '0 0 0 1px rgba(198,165,106,0.3), 0 8px 32px rgba(198,165,106,0.08)' }} />
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3"
-                  style={{ background: 'rgba(198,165,106,0.08)', border: '1px solid rgba(198,165,106,0.12)' }}>
-                  <Icon className="w-5 h-5" style={{ color: '#C6A56A' }} strokeWidth={1.5} />
+                className="group relative rounded-xl p-6 border bg-white cursor-default transition-all duration-300"
+                style={{ borderColor: '#E5DDD0', boxShadow: '0 2px 8px rgba(13,27,42,0.05)' }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(13,27,42,0.12), 0 0 0 1px rgba(154,116,32,0.3)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 8px rgba(13,27,42,0.05)'; }}>
+                <div className="w-11 h-11 rounded-lg flex items-center justify-center mb-4"
+                  style={{ background: 'rgba(154,116,32,0.08)', border: '1px solid rgba(154,116,32,0.15)' }}>
+                  <Icon className="w-5 h-5" style={{ color: '#9A7420' }} strokeWidth={1.5} />
                 </div>
-                <p className="text-[#F8F8F8] font-semibold text-sm leading-snug group-hover:text-[#C6A56A] transition-colors">
+                <p className="font-semibold text-base leading-snug transition-colors" style={{ color: '#0D1B2A' }}>
                   {a.label}
                 </p>
               </motion.div>

@@ -13,10 +13,9 @@ const items = [
 
 export default function TrustBar() {
   return (
-    <div className="relative py-5 border-y"
-      style={{ backgroundColor: 'rgba(255,255,255,0.02)', borderColor: 'rgba(255,255,255,0.06)' }}>
+    <div className="relative py-6 border-y" style={{ backgroundColor: '#FFFFFF', borderColor: '#E5DDD0' }}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
           {items.map((item, i) => {
             const Icon = item.icon;
             return (
@@ -26,8 +25,8 @@ export default function TrustBar() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="flex items-center gap-2.5">
-                <Icon className="w-4 h-4 flex-shrink-0" style={{ color: '#C6A56A' }} strokeWidth={1.5} />
-                <span className="text-[13px] font-medium" style={{ color: '#A0A7B2' }}>
+                <Icon className="w-5 h-5 flex-shrink-0" style={{ color: '#9A7420' }} strokeWidth={1.5} />
+                <span className="text-base font-medium" style={{ color: '#374151' }}>
                   {item.label}
                 </span>
               </motion.div>

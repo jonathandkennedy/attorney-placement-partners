@@ -14,31 +14,35 @@ const positions = [
   { title: 'Practice Leader', desc: 'Department heads shaping firm strategy', tier: 4 },
 ];
 
-const tierColors: Record<number, string> = {
-  1: 'rgba(160,167,178,0.15)',
-  2: 'rgba(198,165,106,0.08)',
-  3: 'rgba(198,165,106,0.14)',
-  4: 'rgba(198,165,106,0.22)',
+const tierBg: Record<number, string> = {
+  1: '#FFFFFF',
+  2: '#FFFDF5',
+  3: '#FFF8E8',
+  4: '#FFF3D0',
 };
 const tierBorder: Record<number, string> = {
-  1: 'rgba(255,255,255,0.07)',
-  2: 'rgba(198,165,106,0.15)',
-  3: 'rgba(198,165,106,0.25)',
-  4: 'rgba(198,165,106,0.4)',
+  1: '#E5DDD0',
+  2: '#D4B97F',
+  3: '#C6A56A',
+  4: '#B8892A',
 };
-const tierText: Record<number, string> = { 1: '#A0A7B2', 2: '#C6A56A', 3: '#C6A56A', 4: '#D4B97F' };
+const tierDot: Record<number, string> = {
+  1: '#9A7420',
+  2: '#9A7420',
+  3: '#8B6318',
+  4: '#7A5515',
+};
 
 export default function PositionsFilled() {
   return (
-    <section className="app-section" id="positions"
-      style={{ background: 'linear-gradient(180deg, #071223 0%, rgba(10,20,40,1) 50%, #071223 100%)' }}>
+    <section className="app-section" id="positions" style={{ backgroundColor: '#FFFFFF' }}>
       <div className="app-container relative">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
           <p className="app-eyebrow mb-4">Placement Range</p>
-          <h2 className="app-heading text-4xl md:text-5xl max-w-2xl mx-auto">
+          <h2 className="app-heading max-w-2xl mx-auto" style={{ fontSize: 'clamp(2.4rem, 4vw, 3.6rem)' }}>
             From Junior Associate To <span className="gold-text">Rainmaker</span> Partner
           </h2>
-          <p className="text-[#A0A7B2] mt-4 max-w-md mx-auto text-base">
+          <p className="mt-5 max-w-md mx-auto text-lg" style={{ color: '#374151' }}>
             No matter the role, we have the network and the judgment to find your hire.
           </p>
         </motion.div>
@@ -51,18 +55,22 @@ export default function PositionsFilled() {
               viewport={{ once: true }}
               transition={{ duration: 0.55, delay: i * 0.07 }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="relative rounded-xl p-5 border group cursor-default"
-              style={{ background: tierColors[pos.tier], borderColor: tierBorder[pos.tier] }}>
-              <div className="flex items-center gap-1.5 mb-3">
+              className="relative rounded-xl p-6 border cursor-default transition-all duration-300"
+              style={{
+                background: tierBg[pos.tier],
+                borderColor: tierBorder[pos.tier],
+                boxShadow: pos.tier >= 3 ? '0 4px 20px rgba(154,116,32,0.12)' : '0 2px 8px rgba(13,27,42,0.05)',
+              }}>
+              <div className="flex items-center gap-1.5 mb-4">
                 {Array.from({ length: pos.tier }).map((_, j) => (
-                  <div key={j} className="w-1.5 h-1.5 rounded-full" style={{ background: tierText[pos.tier] }} />
+                  <div key={j} className="w-2 h-2 rounded-full" style={{ background: tierDot[pos.tier] }} />
                 ))}
               </div>
-              <h3 className="font-serif font-bold text-base mb-1.5 text-[#F8F8F8]">{pos.title}</h3>
-              <p className="text-xs leading-relaxed" style={{ color: '#A0A7B2' }}>{pos.desc}</p>
+              <h3 className="font-serif font-bold text-lg mb-2" style={{ color: '#0D1B2A' }}>{pos.title}</h3>
+              <p className="text-base leading-relaxed" style={{ color: '#374151' }}>{pos.desc}</p>
               {pos.tier === 4 && (
-                <div className="absolute top-4 right-4">
-                  <TrendingUp className="w-4 h-4" style={{ color: '#C6A56A', opacity: 0.6 }} strokeWidth={1.5} />
+                <div className="absolute top-5 right-5">
+                  <TrendingUp className="w-5 h-5" style={{ color: '#9A7420', opacity: 0.7 }} strokeWidth={1.5} />
                 </div>
               )}
             </motion.div>

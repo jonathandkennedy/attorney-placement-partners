@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
-  --app-bg: #071223;
-  --app-gold: #C6A56A;
-  --app-white: #F8F8F8;
-  --app-muted: #A0A7B2;
+  color-scheme: light;
+  --app-bg: #F7F5F0;
+  --app-gold: #9A7420;
+  --app-gold-light: #C6A56A;
+  --app-navy: #0D1B2A;
+  --app-text: #374151;
+  --app-muted: #6B7480;
+  --app-border: #E5DDD0;
+  --app-white: #FFFFFF;
 }
 
 html, body {
   background-color: var(--app-bg);
-  color: var(--app-white);
+  color: var(--app-navy);
 }
 
 body {
@@ -34,62 +38,72 @@ body {
   }
   .app-container { @apply max-w-7xl mx-auto; }
   .app-eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.3em];
+    @apply text-sm font-semibold uppercase tracking-[0.25em];
     color: var(--app-gold);
   }
   .app-heading {
     @apply font-serif font-bold leading-tight tracking-tight;
-    color: var(--app-white);
+    color: var(--app-navy);
   }
   .app-card {
-    @apply rounded-2xl p-6 border transition-all duration-300;
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
+    @apply rounded-2xl p-8 border bg-white transition-all duration-300;
+    border-color: var(--app-border);
+    box-shadow: 0 2px 12px rgba(13, 27, 42, 0.06);
   }
   .app-card:hover {
-    @apply shadow-appCardHover -translate-y-1;
-    border-color: rgba(198,165,106,0.3);
+    box-shadow: 0 12px 40px rgba(13, 27, 42, 0.12), 0 0 0 1px rgba(154, 116, 32, 0.25);
+    transform: translateY(-3px);
   }
   .app-btn-primary {
-    @apply inline-flex items-center justify-center gap-2.5 font-semibold text-sm transition-all duration-300 rounded-xl px-7 py-4;
+    @apply inline-flex items-center justify-center gap-2.5 font-semibold text-base transition-all duration-300 rounded-xl px-8 py-4;
     background: linear-gradient(135deg, #C6A56A 0%, #D4B97F 50%, #A8893A 100%);
-    color: #071223;
+    color: #0D1B2A;
   }
   .app-btn-primary:hover {
-    @apply shadow-goldGlow -translate-y-0.5;
-    filter: brightness(1.08);
+    box-shadow: 0 6px 24px rgba(198, 165, 106, 0.5);
+    filter: brightness(1.06);
+    transform: translateY(-1px);
   }
   .app-btn-secondary {
-    @apply inline-flex items-center justify-center gap-2.5 font-semibold text-sm transition-all duration-300 rounded-xl px-7 py-4 border;
+    @apply inline-flex items-center justify-center gap-2.5 font-semibold text-base transition-all duration-300 rounded-xl px-8 py-4 border-2;
+    border-color: var(--app-navy);
+    color: var(--app-navy);
     background: transparent;
-    border-color: rgba(198,165,106,0.4);
-    color: var(--app-gold);
   }
   .app-btn-secondary:hover {
-    border-color: var(--app-gold);
-    background: rgba(198,165,106,0.08);
+    background: var(--app-navy);
+    color: #FFFFFF;
+  }
+  .app-btn-secondary-light {
+    @apply inline-flex items-center justify-center gap-2.5 font-semibold text-base transition-all duration-300 rounded-xl px-8 py-4 border-2;
+    border-color: rgba(198, 165, 106, 0.5);
+    color: #C6A56A;
+    background: transparent;
+  }
+  .app-btn-secondary-light:hover {
+    border-color: #C6A56A;
+    background: rgba(198, 165, 106, 0.1);
   }
   .gold-text {
-    background: linear-gradient(135deg, #C6A56A 0%, #D4B97F 50%, #A8893A 100%);
+    background: linear-gradient(135deg, #9A7420 0%, #C6A56A 60%, #9A7420 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   .gold-divider {
     @apply h-px w-16;
-    background: linear-gradient(90deg, transparent, #C6A56A, transparent);
+    background: linear-gradient(90deg, #9A7420, #C6A56A, transparent);
   }
 }
 
 *:focus-visible {
-  outline: 2px solid #C6A56A;
+  outline: 2px solid #9A7420;
   outline-offset: 2px;
 }
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #071223; }
+::-webkit-scrollbar-track { background: #F7F5F0; }
 ::-webkit-scrollbar-thumb {
-  background: rgba(198,165,106,0.3);
+  background: rgba(154, 116, 32, 0.3);
   border-radius: 10px;
 }
